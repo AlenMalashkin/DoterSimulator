@@ -7,11 +7,10 @@ public class Game : MonoBehaviour
     [SerializeField] private Alert alert;
     [SerializeField] private StatsValueChanger statsValueChanger;
     [SerializeField] private GameOver gameOver;
-    
-    [Header("Actions")]
+
+    [Header("Actions")] 
+    [SerializeField] private DoAction[] actions;
     [SerializeField] private PlayGame playGame;
-    [SerializeField] private GoToFactory goToFactory;
-    [SerializeField] private GoToMcWithFirends goToMcWithFirends;
     
     [Header("Progress Bars")] 
     [SerializeField] private GameObject[] progressBarGameObjects;
@@ -26,9 +25,13 @@ public class Game : MonoBehaviour
             _progressBars[i] = progressBarGameObjects[i].GetComponent<IProgressBarObserver>();
         }
 
-        gameOver.Init(alert, statsValueChanger); 
-        playGame.Init(_progressBars, ratingDisplayer, statsValueChanger);
-        goToFactory.Init(_progressBars, statsValueChanger);
-        goToMcWithFirends.Init(_progressBars, statsValueChanger);
+        foreach (var action in actions)
+        {
+            action.Init(_progressBars, statsValueChanger);
+        }
+
+        gameOver.Init(alert, statsValueChanger);
+
+        playGame.Init(ratingDisplayer);
     }
 }

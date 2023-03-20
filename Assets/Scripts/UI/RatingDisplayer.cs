@@ -6,16 +6,9 @@ using Random = UnityEngine.Random;
 public class RatingDisplayer : MonoBehaviour
 {
     [SerializeField] private Text ratingDisplay;
-
-    private PlayGame _playGame;
     
     private int _rating = 10;
-
-    public void Init(PlayGame playGame)
-    {
-        _playGame = playGame;
-    }
-
+    
     private void OnEnable()
     {
         _rating = PlayerPrefs.GetInt("Rating", 10);

@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class StatsValueChanger : MonoBehaviour
 {
-    public event Action OnValuesChangedEvent;
+    public event Action<float, Stats> OnStatsValueChangedEvent;
     
     private Dictionary<Stats, string> statsMap = new Dictionary<Stats, string>()
     {
         {Stats.Hungry, "Hungry"},
         {Stats.Mood, "Mood"},
-        {Stats.Sleepy, "Mood"},
+        {Stats.Sleepy, "Sleepy"},
     };
     
     public void IncreaseStats(float consumption, Stats stat)
@@ -28,7 +28,7 @@ public class StatsValueChanger : MonoBehaviour
 
         PlayerPrefs.SetFloat(statsMap[stat], statValue);
 
-        OnValuesChangedEvent?.Invoke();
+        OnStatsValueChangedEvent?.Invoke(statValue, stat);
     }
 
     public void DecreaseStats(float consumption, Stats stat)
@@ -45,6 +45,6 @@ public class StatsValueChanger : MonoBehaviour
 
         PlayerPrefs.SetFloat(statsMap[stat], statValue);
 
-        OnValuesChangedEvent?.Invoke();
+        OnStatsValueChangedEvent?.Invoke(statValue, stat);
     }
 }
