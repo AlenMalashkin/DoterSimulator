@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Button))]
 public class PlayGame : MonoBehaviour
 {
+    [SerializeField] private Button button;
+    
     [SerializeField] private float hungryConsumption;
     [SerializeField] private float sleepyConsumption;
     [SerializeField] private float moodConsumption;
@@ -10,33 +13,34 @@ public class PlayGame : MonoBehaviour
     private RatingDisplayer _ratingDisplayer;
     private IProgressBarObserver[] _progressBars;
     private StatsValueChanger _statsValueChanger;
-    private Button _button;
 
     public void Init(IProgressBarObserver[] progressBars, RatingDisplayer ratingDisplayer, StatsValueChanger statsValueChanger)
     {
-        _button = GetComponent<Button>();
+        button = GetComponent<Button>();
         
         _progressBars = progressBars;
         _ratingDisplayer = ratingDisplayer;
         _statsValueChanger = statsValueChanger;
         
-        _button.onClick.AddListener(() => _statsValueChanger.DecreaseStats(hungryConsumption, moodConsumption, sleepyConsumption));
+        button.onClick.AddListener(() => _statsValueChanger.DecreaseStats(hungryConsumption, Stats.Hungry));
+        button.onClick.AddListener(() => _statsValueChanger.DecreaseStats(moodConsumption, Stats.Mood));
+        button.onClick.AddListener(() => _statsValueChanger.DecreaseStats(sleepyConsumption, Stats.Sleepy));
         
-        _button.onClick.AddListener(_ratingDisplayer.OnPlayGame);
+        button.onClick.AddListener(_ratingDisplayer.OnPlayGame);
         
         foreach (var progressBar in _progressBars)
         {
-            _button.onClick.AddListener(progressBar.OnValueChanged);
+            button.onClick.AddListener(progressBar.OnValueChanged);
         }
     }
 
     private void OnDisable()
     {
-        _button.onClick.RemoveListener(_ratingDisplayer.OnPlayGame);
+        button.onClick.RemoveListener(_ratingDisplayer.OnPlayGame);
         
         foreach (var progressBar in _progressBars)
         {
-            _button.onClick.RemoveListener(progressBar.OnValueChanged);
+            button.onClick.RemoveListener(progressBar.OnValueChanged);
         }
     }
 }

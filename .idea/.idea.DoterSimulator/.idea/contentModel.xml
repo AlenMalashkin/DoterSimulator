@@ -8,11 +8,20 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Actions" t="Include">
+            <e p="GoToFactory.cs" t="Include" />
+            <e p="GoToMcWithFirends.cs" t="Include" />
             <e p="PlayGame.cs" t="Include" />
           </e>
           <e p="Game.cs" t="Include" />
           <e p="GameOver.cs" t="Include" />
-          <e p="StatsValueChanger.cs" t="Include" />
+          <e p="Money" t="Include">
+            <e p="Bank.cs" t="Include" />
+            <e p="DisplayMoneyCount.cs" t="Include" />
+          </e>
+          <e p="Stats" t="Include">
+            <e p="Stats.cs" t="Include" />
+            <e p="StatsValueChanger.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="Alert.cs" t="Include" />
             <e p="ProgressBars" t="Include">

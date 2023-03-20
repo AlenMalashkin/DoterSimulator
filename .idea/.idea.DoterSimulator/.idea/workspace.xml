@@ -9,11 +9,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RatingDisplayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actions/GoToFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameOver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ProgressBars/SleepyDisplay.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StatsValueChanger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/Stats.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actions/GoToMcWithFirends.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ProgressBars/MoodDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actions/PlayGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Money/DisplayMoneyCount.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Alert.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -32,10 +35,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProgressBars/SleepyDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProgressBars/HungryDisplay.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ProgressBars/MoodDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Actions/PlayGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StatsValueChanger.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameOver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Bank.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Money/Bank.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Money/DisplayMoneyCount.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stats/Stats.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Stats/StatsValueChanger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Actions/PlayGame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Actions/GoToMcWithFirends.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Actions/GoToFactory.cs" />
       </list>
     </option>
   </component>
@@ -84,6 +94,8 @@
       <workItem from="1679061904706" duration="171000" />
       <workItem from="1679069858627" duration="931000" />
       <workItem from="1679122928768" duration="8445000" />
+      <workItem from="1679296486011" duration="6589000" />
+      <workItem from="1679335790515" duration="2395000" />
     </task>
     <servers />
   </component>
