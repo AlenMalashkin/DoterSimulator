@@ -4,19 +4,53 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class PlayGame : MonoBehaviour
 {
-    [SerializeField] private Button button;
-    
-    private RatingDisplayer _ratingDisplayer;
+    private Button _button;
 
-    public void Init(RatingDisplayer ratingDisplayer)
+    private IRatingObserver[] _ratingObservers;
+
+    private WinrateRegulator _winrateRegulator;
+
+    public void Init(IRatingObserver[] ratingObservers)
     {
-        _ratingDisplayer = ratingDisplayer;
+        _button = GetComponent<Button>();
         
-        button.onClick.AddListener(_ratingDisplayer.OnPlayGame);
+        _ratingObservers = ratingObservers;
+        
+        _button.onClick.AddListener(Play);
+        
+        _winrateRegulator = new WinrateRegulator();
     }
 
     private void OnDisable()
     {
-        button.onClick.RemoveListener(_ratingDisplayer.OnPlayGame);
+        _button.onClick.RemoveListener(Play);
+    }
+
+    private void Play()
+    {
+        float num = Random.Range(0f, 1f);
+
+        var rating = PlayerPrefs.GetInt("Rating", 10);
+        
+        if (num < PlayerPrefs.GetFloat("Winrate"))
+        {
+            rating += 30;
+        }
+        else
+        {
+            rating -= 30;
+            
+            if (rating < 10)
+                rating = 10;
+        }
+
+        PlayerPrefs.SetInt("Rating", rating);
+
+        foreach (var ratingObserver in _ratingObservers)
+        {
+            ratingObserver.OnRatingChanged(rating);
+        }
+        
+        _winrateRegulator.CheckRemainGamesWithHighWinrate();
     }
 }

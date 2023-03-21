@@ -1,28 +1,37 @@
-using System;
 using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] private RatingDisplayer ratingDisplayer;
-    [SerializeField] private Alert alert;
     [SerializeField] private StatsValueChanger statsValueChanger;
+    [SerializeField] private Alert alert;
     [SerializeField] private GameOver gameOver;
 
     [Header("Actions")] 
     [SerializeField] private DoAction[] actions;
     [SerializeField] private PlayGame playGame;
     
-    [Header("Progress Bars")] 
+    [Header("Progress Bar Observers")] 
     [SerializeField] private GameObject[] progressBarGameObjects;
     private IProgressBarObserver[] _progressBars;
+
+    [Header("Raring Observers")] 
+    [SerializeField] private GameObject[] ratingObserverGameObjects;
+    private IRatingObserver[] _ratingObservers;
+    
     
     private void OnEnable()
     {
         _progressBars = new IProgressBarObserver[progressBarGameObjects.Length];
+        _ratingObservers = new IRatingObserver[ratingObserverGameObjects.Length];
         
         for (int i = 0; i < _progressBars.Length; i++)
         {
             _progressBars[i] = progressBarGameObjects[i].GetComponent<IProgressBarObserver>();
+        }
+
+        for (int i = 0; i < ratingObserverGameObjects.Length; i++)
+        {
+            _ratingObservers[i] = ratingObserverGameObjects[i].GetComponent<IRatingObserver>();
         }
 
         foreach (var action in actions)
@@ -32,6 +41,6 @@ public class Game : MonoBehaviour
 
         gameOver.Init(alert, statsValueChanger);
 
-        playGame.Init(ratingDisplayer);
+        playGame.Init(_ratingObservers);
     }
 }
