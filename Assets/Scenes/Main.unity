@@ -2156,43 +2156,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1537194028}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1537194030}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: DecreaseSleepyConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1537194030}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: IncreaseHungryConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1537194030}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: IncreaseMoodConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1537194028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2244,12 +2208,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1537194027}
-  hungryDecreaseConsumption: 0
-  sleepyDecreaseConsumption: 0.05
-  moodDecreaseConsumption: 0
-  hungryIncreaseConsumption: 0.2
-  sleepyIncreaseConsumption: 0
-  moodIncreaseConsumption: 0.25
+  hungryConsumptionChange: 0.2
+  sleepyConsumptionChange: 0.05
+  moodConsumptionChange: 0.2
+  actions: 030000000400000002000000
 --- !u!114 &1537194031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2527,12 +2489,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1762853001}
-  hungryDecreaseConsumption: 0.3
-  sleepyDecreaseConsumption: 0
-  moodDecreaseConsumption: 0
-  hungryIncreaseConsumption: 0
-  sleepyIncreaseConsumption: 0.6
-  moodIncreaseConsumption: 0.3
+  hungryConsumptionChange: 0.3
+  sleepyConsumptionChange: 0.6
+  moodConsumptionChange: 0.2
+  actions: 050000000000000004000000
 --- !u!114 &1762853001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2576,43 +2536,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1762853002}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1762853000}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: IncreaseSleepyConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1762853000}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: DecreaseHungryConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1762853000}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: IncreaseMoodConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1762853002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2875,43 +2799,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1837222970}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1837222972}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: DecreaseHungryConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1837222972}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: DecreaseSleepyConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1837222972}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: DecreaseMoodConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1837222970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2963,12 +2851,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1837222969}
-  hungryDecreaseConsumption: 0.1
-  sleepyDecreaseConsumption: 0.07
-  moodDecreaseConsumption: 0.05
-  hungryIncreaseConsumption: 0
-  sleepyIncreaseConsumption: 0
-  moodIncreaseConsumption: 0
+  hungryConsumptionChange: 0.1
+  sleepyConsumptionChange: 0.07
+  moodConsumptionChange: 0.05
+  actions: 000000000100000002000000
 --- !u!114 &1837222973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3364,12 +3250,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 2088888246}
-  hungryDecreaseConsumption: 0.1
-  sleepyDecreaseConsumption: 0.2
-  moodDecreaseConsumption: 0.25
-  hungryIncreaseConsumption: 0
-  sleepyIncreaseConsumption: 0
-  moodIncreaseConsumption: 0
+  hungryConsumptionChange: 0.1
+  sleepyConsumptionChange: 0.07
+  moodConsumptionChange: 0.2
+  actions: 000000000100000002000000
 --- !u!114 &2088888246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3413,43 +3297,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2088888247}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2088888245}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: DecreaseHungryConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2088888245}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: DecreaseMoodConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2088888245}
-        m_TargetAssemblyTypeName: DoAction, Assembly-CSharp
-        m_MethodName: DecreaseSleepyConsumption
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2088888247
 MonoBehaviour:
   m_ObjectHideFlags: 0

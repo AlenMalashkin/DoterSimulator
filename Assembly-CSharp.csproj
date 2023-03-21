@@ -46,17 +46,18 @@
      <Compile Include="Assets\Scripts\UI\ProgressBars\IProgressBarObserver.cs" />
      <Compile Include="Assets\Scripts\UI\Alert.cs" />
      <Compile Include="Assets\Scripts\Stats\StatsValueChanger.cs" />
+     <Compile Include="Assets\Scripts\Actions\DoAction.cs" />
+     <Compile Include="Assets\Scripts\Actions\SpendMoney.cs" />
      <Compile Include="Assets\Scripts\Stats\Stats.cs" />
      <Compile Include="Assets\Scripts\Money\DisplayMoneyCount.cs" />
      <Compile Include="Assets\Scripts\UI\ProgressBars\SleepyDisplay.cs" />
      <Compile Include="Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Scripts\GameOver.cs" />
      <Compile Include="Assets\Scripts\UI\ProgressBars\MoodDisplay.cs" />
+     <Compile Include="Assets\Scripts\Actions\EarnMoney.cs" />
      <Compile Include="Assets\Scripts\UI\ProgressBars\HungryDisplay.cs" />
      <Compile Include="Assets\Scripts\Money\Bank.cs" />
-     <Compile Include="Assets\Scripts\Actions\DoAction.cs" />
-     <Compile Include="Assets\Scripts\Actions\EarnMoney.cs" />
-     <Compile Include="Assets\Scripts\Actions\SpendMoney.cs" />
+     <Compile Include="Assets\Scripts\Actions\Actions.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.40f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

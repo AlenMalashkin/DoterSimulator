@@ -5,15 +5,29 @@ using UnityEngine;
 
 public class StatsValueChanger : MonoBehaviour
 {
-    public event Action<float, Stats> OnStatsValueChangedEvent;
-    
+    public event Action<float> OnHungryValueChangedEvent;
+    public event Action<float> OnMoodValueChangedEvent;
+    public event Action<float> OnSleepyValueChangedEvent;
+
+    private Dictionary<Stats, Action<float>> onValueChangedActionsMap;
+
     private Dictionary<Stats, string> statsMap = new Dictionary<Stats, string>()
     {
         {Stats.Hungry, "Hungry"},
         {Stats.Mood, "Mood"},
         {Stats.Sleepy, "Sleepy"},
     };
-    
+
+    private void Awake()
+    {
+        onValueChangedActionsMap = new Dictionary<Stats, Action<float>>()
+        {
+            {Stats.Hungry, OnHungryValueChangedEvent},
+            {Stats.Mood, OnMoodValueChangedEvent},
+            {Stats.Sleepy, OnSleepyValueChangedEvent}
+        };
+    }
+
     public void IncreaseStats(float consumption, Stats stat)
     {
         var statValue = PlayerPrefs.GetFloat(statsMap[stat], 1f);
@@ -28,7 +42,7 @@ public class StatsValueChanger : MonoBehaviour
 
         PlayerPrefs.SetFloat(statsMap[stat], statValue);
 
-        OnStatsValueChangedEvent?.Invoke(statValue, stat);
+        onValueChangedActionsMap[stat].Invoke(statValue);
     }
 
     public void DecreaseStats(float consumption, Stats stat)
@@ -44,7 +58,7 @@ public class StatsValueChanger : MonoBehaviour
         }
 
         PlayerPrefs.SetFloat(statsMap[stat], statValue);
-
-        OnStatsValueChangedEvent?.Invoke(statValue, stat);
+        
+        onValueChangedActionsMap[stat].Invoke(statValue);
     }
 }

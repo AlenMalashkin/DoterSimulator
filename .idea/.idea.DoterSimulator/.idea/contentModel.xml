@@ -8,6 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Actions" t="Include">
+            <e p="Actions.cs" t="Include" />
             <e p="DoAction.cs" t="Include" />
             <e p="EarnMoney.cs" t="Include" />
             <e p="PlayGame.cs" t="Include" />

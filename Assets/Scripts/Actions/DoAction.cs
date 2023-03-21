@@ -1,4 +1,7 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
@@ -6,15 +9,14 @@ public class DoAction : MonoBehaviour
 {
     [SerializeField] private Button button;
     
-    [Header("Decrease stats")]
-    [SerializeField] private float hungryDecreaseConsumption;
-    [SerializeField] private float sleepyDecreaseConsumption;
-    [SerializeField] private float moodDecreaseConsumption;
-    
-    [Header("Increase stats")]
-    [SerializeField] private float hungryIncreaseConsumption;
-    [SerializeField] private float sleepyIncreaseConsumption;
-    [SerializeField] private float moodIncreaseConsumption;
+    [Header("Change stats")]
+    [SerializeField] private float hungryConsumptionChange;
+    [SerializeField] private float sleepyConsumptionChange;
+    [SerializeField] private float moodConsumptionChange;
+
+    [SerializeField] private Actions[] actions;
+
+    private Dictionary<Actions, UnityAction> _actionsMap;
     
     private RatingDisplayer _ratingDisplayer;
     private IProgressBarObserver[] _progressBars;
@@ -24,8 +26,31 @@ public class DoAction : MonoBehaviour
     {
         _progressBars = progressBars;
         _statsValueChanger = statsValueChanger;
+
+        _actionsMap = new Dictionary<Actions, UnityAction>()
+        {
+            {Actions.DecreaseHungryConsumption, DecreaseHungryConsumption},
+            {Actions.DecreaseMoodConsumption, DecreaseMoodConsumption},
+            {Actions.DecreaseSleepyConsumption, DecreaseSleepyConsumption},
+            {Actions.IncreaseHungryConsumption, IncreaseHungryConsumption},
+            {Actions.IncreaseMoodConsumption, IncreaseMoodConsumption},
+            {Actions.IncreaseSleepyConsumption, IncreaseSleepyConsumption}
+        };
+
+        foreach (var action in actions)
+        {
+            button.onClick.AddListener(_actionsMap[action]);
+        }
         
         OnValueChanged();
+    }
+
+    private void OnDisable()
+    {
+        foreach (var action in actions)
+        {
+            button.onClick.RemoveListener(_actionsMap[action]);
+        }
     }
 
     private void OnValueChanged()
@@ -36,39 +61,39 @@ public class DoAction : MonoBehaviour
         }
     }
 
-    public void DecreaseHungryConsumption()
+    private void DecreaseHungryConsumption()
     {
-        _statsValueChanger.DecreaseStats(hungryDecreaseConsumption, Stats.Hungry);
+        _statsValueChanger.DecreaseStats(hungryConsumptionChange, Stats.Hungry);
         OnValueChanged();
     }
 
-    public void DecreaseMoodConsumption()
+    private void DecreaseMoodConsumption()
     {
-        _statsValueChanger.DecreaseStats(moodDecreaseConsumption, Stats.Mood);
+        _statsValueChanger.DecreaseStats(moodConsumptionChange, Stats.Mood);
         OnValueChanged();
     }
 
-    public void DecreaseSleepyConsumption()
+    private void DecreaseSleepyConsumption()
     {
-        _statsValueChanger.DecreaseStats(sleepyDecreaseConsumption, Stats.Sleepy);
+        _statsValueChanger.DecreaseStats(sleepyConsumptionChange, Stats.Sleepy);
         OnValueChanged();
     }
     
-    public void IncreaseHungryConsumption()
+    private void IncreaseHungryConsumption()
     {
-        _statsValueChanger.IncreaseStats(hungryIncreaseConsumption, Stats.Hungry);
+        _statsValueChanger.IncreaseStats(hungryConsumptionChange, Stats.Hungry);
         OnValueChanged();
     }
 
-    public void IncreaseMoodConsumption()
+    private void IncreaseMoodConsumption()
     {
-        _statsValueChanger.IncreaseStats(moodIncreaseConsumption, Stats.Mood);
+        _statsValueChanger.IncreaseStats(moodConsumptionChange, Stats.Mood);
         OnValueChanged();
     }
 
-    public void IncreaseSleepyConsumption()
+    private void IncreaseSleepyConsumption()
     {
-        _statsValueChanger.IncreaseStats(sleepyIncreaseConsumption, Stats.Sleepy);
+        _statsValueChanger.IncreaseStats(sleepyConsumptionChange, Stats.Sleepy);
         OnValueChanged();
     }
 }
