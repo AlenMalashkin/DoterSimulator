@@ -6,6 +6,7 @@ public class ImproveSkills : MonoBehaviour, IRatingObserver
 {
     [SerializeField] private float improvedWinrate;
     [SerializeField] private int amountOfHighWinrateGames;
+    [SerializeField] private int cost;
     
     private Button _button;
     private WinrateRegulator _winrateRegulator;
@@ -17,10 +18,7 @@ public class ImproveSkills : MonoBehaviour, IRatingObserver
         _button.onClick.AddListener(RegulateWinrate);
         
         _winrateRegulator = winrateRegulator;
-    }
-
-    private void Awake()
-    {
+        
         if (PlayerPrefs.GetInt("AmountOfGamesWithHighWinrate") > 0)
         {
             _button.interactable = false;
@@ -36,6 +34,7 @@ public class ImproveSkills : MonoBehaviour, IRatingObserver
     {
         _button.interactable = false;
         _winrateRegulator.RegulateWinrate(improvedWinrate, amountOfHighWinrateGames);
+        Bank.Instance.SpendMoney(cost);
     }
     
     public void OnRatingChanged(int rating)
