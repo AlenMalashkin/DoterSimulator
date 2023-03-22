@@ -2321,8 +2321,12 @@ MonoBehaviour:
   - {fileID: 150915689}
   - {fileID: 408585253}
   - {fileID: 2087264114}
+  improveActions:
+  - {fileID: 150915688}
+  - {fileID: 408585252}
+  - {fileID: 2087264113}
+  - {fileID: 595682723}
   playGame: {fileID: 1837222973}
-  improveSkills: {fileID: 595682723}
   progressBarGameObjects:
   - {fileID: 803010507}
   - {fileID: 1540064165}
@@ -2332,6 +2336,10 @@ MonoBehaviour:
   - {fileID: 1084862777}
   - {fileID: 595682716}
   - {fileID: 867249421}
+  - {fileID: 150915686}
+  - {fileID: 408585250}
+  - {fileID: 2087264111}
+  - {fileID: 1721582996}
 --- !u!4 &932369468
 Transform:
   m_ObjectHideFlags: 0
@@ -5187,7 +5195,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000029087, y: -10.749}
+  m_AnchoredPosition: {x: -0.000029087, y: 19.779}
   m_SizeDelta: {x: 309.055, y: 78.502}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2073396743

@@ -10,14 +10,24 @@ public class ImproveSkills : MonoBehaviour, IRatingObserver
     
     private Button _button;
     private WinrateRegulator _winrateRegulator;
+    private Button[] _buttons;
+    private ImproveSkills[] _improveSkills;
 
-    public void Init(WinrateRegulator winrateRegulator)
+    public void Init(WinrateRegulator winrateRegulator, ImproveSkills[] improveSkills)
     {
         _button = GetComponent<Button>();
         
         _button.onClick.AddListener(RegulateWinrate);
         
         _winrateRegulator = winrateRegulator;
+        _improveSkills = improveSkills;
+
+        _buttons = new Button[_improveSkills.Length];
+        
+        for (int i = 0; i < _improveSkills.Length; i++)
+        {
+            _buttons[i] = _improveSkills[i].GetComponent<Button>();
+        }
         
         if (PlayerPrefs.GetInt("AmountOfGamesWithHighWinrate") > 0)
         {
@@ -32,7 +42,11 @@ public class ImproveSkills : MonoBehaviour, IRatingObserver
 
     private void RegulateWinrate()
     {
-        _button.interactable = false;
+        foreach (var button in _buttons)
+        {
+            button.interactable = false;
+        }
+        
         _winrateRegulator.RegulateWinrate(improvedWinrate, amountOfHighWinrateGames);
         Bank.Instance.SpendMoney(cost);
     }

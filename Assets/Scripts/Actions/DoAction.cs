@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,7 +17,6 @@ public class DoAction : MonoBehaviour
 
     private Dictionary<Actions, UnityAction> _actionsMap;
     
-    private RatingDisplayer _ratingDisplayer;
     private IProgressBarObserver[] _progressBars;
     private StatsValueChanger _statsValueChanger;
 

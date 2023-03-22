@@ -13,8 +13,6 @@ public class EarnMoney : MonoBehaviour, IRatingObserver
 		_button = GetComponent<Button>();
 		
 		_button.onClick.AddListener(() => Bank.Instance.GetMoney(earnAmount));
-
-		_button.interactable = false;
 		
 		CheckRatingAmount(PlayerPrefs.GetInt("Rating"));
 	}
@@ -24,6 +22,10 @@ public class EarnMoney : MonoBehaviour, IRatingObserver
 		if (rating >= ratingAmountToUnlockThisWork)
 		{
 			_button.interactable = true;
+		}
+		else
+		{
+			_button.interactable = false;
 		}
 	}
 

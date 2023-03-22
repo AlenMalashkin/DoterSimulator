@@ -46,7 +46,7 @@ public class Game : MonoBehaviour
 
         foreach (var action in improveActions)
         { 
-            action.Init(winrateRegulator);
+            action.Init(winrateRegulator, improveActions);
         }
 
         winrateRegulator.Init(notification, displayRemainGamesWithHighWinrate);
