@@ -17,8 +17,6 @@ public class PlayGame : MonoBehaviour
         _ratingObservers = ratingObservers;
         
         _button.onClick.AddListener(Play);
-        
-        _winrateRegulator = new WinrateRegulator();
     }
 
     private void OnDisable()
@@ -50,7 +48,5 @@ public class PlayGame : MonoBehaviour
         {
             ratingObserver.OnRatingChanged(rating);
         }
-        
-        _winrateRegulator.CheckRemainGamesWithHighWinrate();
     }
 }

@@ -1,12 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class WinrateRegulator
+public class WinrateRegulator : MonoBehaviour, IRatingObserver
 {
-    private float _winrate = PlayerPrefs.GetFloat("Winrate", 0.55f);
-    private int _remainGamesWithHighWinrate = PlayerPrefs.GetInt("AmountOfGamesWithHighWinrate", 0);
-    
+    private float _winrate;
+    private int _remainGamesWithHighWinrate;
+
+    private void OnEnable()
+    {
+        _winrate = PlayerPrefs.GetFloat("Winrate", 0.55f);
+        _remainGamesWithHighWinrate = PlayerPrefs.GetInt("AmountOfGamesWithHighWinrate", 0);
+    }
+
     public void RegulateWinrate(float winrate, int amountOfGames)
     {
         _winrate = winrate;
@@ -15,7 +20,7 @@ public class WinrateRegulator
         PlayerPrefs.SetFloat("Winrate", _winrate);
     }
 
-    public void CheckRemainGamesWithHighWinrate()
+    public void OnRatingChanged(int rating)
     {
         if (_remainGamesWithHighWinrate > 0)
         {

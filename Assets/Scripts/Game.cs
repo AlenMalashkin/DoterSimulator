@@ -5,10 +5,12 @@ public class Game : MonoBehaviour
     [SerializeField] private StatsValueChanger statsValueChanger;
     [SerializeField] private Alert alert;
     [SerializeField] private GameOver gameOver;
-
+    [SerializeField] private WinrateRegulator winrateRegulator;
+    
     [Header("Actions")] 
     [SerializeField] private DoAction[] actions;
     [SerializeField] private PlayGame playGame;
+    [SerializeField] private ImproveSkills improveSkills;
     
     [Header("Progress Bar Observers")] 
     [SerializeField] private GameObject[] progressBarGameObjects;
@@ -17,8 +19,7 @@ public class Game : MonoBehaviour
     [Header("Raring Observers")] 
     [SerializeField] private GameObject[] ratingObserverGameObjects;
     private IRatingObserver[] _ratingObservers;
-    
-    
+
     private void OnEnable()
     {
         _progressBars = new IProgressBarObserver[progressBarGameObjects.Length];
@@ -40,7 +41,7 @@ public class Game : MonoBehaviour
         }
 
         gameOver.Init(alert, statsValueChanger);
-
+        improveSkills.Init(winrateRegulator);
         playGame.Init(_ratingObservers);
     }
 }
