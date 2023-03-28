@@ -9,14 +9,14 @@ public class Notification : MonoBehaviour
     [SerializeField] private Button closeButton;
     [SerializeField] private Color color;
 
-    private void OnEnable()
+    public virtual void OnEnable()
     {
         notification.gameObject.SetActive(false);
         closeButton.onClick.AddListener(CloseAlert);
         messageBackground.color = color;
     }
 
-    private void OnDisable()
+    public virtual void OnDisable()
     {
         closeButton.onClick.RemoveListener(CloseAlert);
     }

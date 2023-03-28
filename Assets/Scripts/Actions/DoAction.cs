@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using YG;
 
 [RequireComponent(typeof(Button))]
 public class DoAction : MonoBehaviour

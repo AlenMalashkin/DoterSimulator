@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
@@ -10,20 +10,11 @@ public class GameOver : MonoBehaviour
     private int _stepsToDieFormSleepy = 5;
     private int _stepsToDieFormMood = 5;
 
-    private Dictionary<Stats, string> _messagesMap;
-
     public void Init(Notification alert, StatsValueChanger statsValueChanger)
     {
         _alert = alert;
         _statsValueChanger = statsValueChanger;
         
-        _messagesMap = new Dictionary<Stats, string>()
-        {
-            {Stats.Hungry, $"Вы слишком голодны! улучшите свои показатели в течении следующих {_stepsToDieFormHungry} ходов или умрете с голоду!"},
-            {Stats.Mood, $"У вас слишком плохое настроение! улучшите свои показатели в течении следующих {_stepsToDieFormMood} ходов или вас замучает депрессия!"},
-            {Stats.Sleepy, $"Вы слишком сонный! улучшите свои показатели в течении следующих {_stepsToDieFormSleepy} ходов или умрете от недосыпа!"}
-        };
-
         _statsValueChanger.OnHungryValueChangedEvent += OnHungryValueChanged;
         _statsValueChanger.OnMoodValueChangedEvent += OnMoodValueChanged;
         _statsValueChanger.OnSleepyValueChangedEvent += OnSleepyValueChanged;
@@ -41,7 +32,8 @@ public class GameOver : MonoBehaviour
         if (value <= 0)
         {
             _stepsToDieFormHungry -= 1;
-            _alert.ShowMessage($"Вы слишком голодны! улучшите свои показатели в течении следующих {_stepsToDieFormHungry} ходов или умрете с голоду!");
+            
+            _alert.ShowMessage($"Вы слишком голодны! Улучшите свои показатели в течении следующих {_stepsToDieFormHungry} ходов или умрете с голоду!");
         }
         else
         {
@@ -59,7 +51,8 @@ public class GameOver : MonoBehaviour
         if (value <= 0)
         {
             _stepsToDieFormSleepy -= 1;
-            _alert.ShowMessage($"Вы слишком сонный! улучшите свои показатели в течении следующих {_stepsToDieFormSleepy} ходов или умрете от недосыпа!");
+            
+            _alert.ShowMessage($"Вы слишком сонный! Улучшите свои показатели в течении следующих {_stepsToDieFormSleepy} ходов или умрете от недосыпа!");
         }
         else
         {
@@ -77,7 +70,8 @@ public class GameOver : MonoBehaviour
         if (value <= 0)
         {
             _stepsToDieFormMood -= 1;
-            _alert.ShowMessage($"У вас слишком плохое настроение! улучшите свои показатели в течении следующих {_stepsToDieFormMood} ходов или вас замучает депрессия!");
+            
+            _alert.ShowMessage($"У вас слишком плохое настроение! Улучшите свои показатели в течении следующих {_stepsToDieFormMood} ходов или умрете!");
         }
         else
         {
@@ -92,6 +86,6 @@ public class GameOver : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("You're died!");
+        SceneManager.LoadScene("Die");
     }
 }
