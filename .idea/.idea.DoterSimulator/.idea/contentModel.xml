@@ -19,6 +19,9 @@
             <e p="PlayGame.cs" t="Include" />
             <e p="SpendMoney.cs" t="Include" />
           </e>
+          <e p="Ads" t="Include">
+            <e p="RewardedAds.cs" t="Include" />
+          </e>
           <e p="Game.cs" t="Include" />
           <e p="GameOver.cs" t="Include" />
           <e p="Money" t="Include">

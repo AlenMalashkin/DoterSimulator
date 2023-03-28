@@ -41,12 +41,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\YandexGame\ScriptsYG\Editor\FontMasseInstallEditorWindow.cs" />
-     <Compile Include="Assets\Editor\RemoveMobileSupportWarningWebBuild.cs" />
      <Compile Include="Assets\YandexGame\Addons\UnityToolbag-main\ConditionallyVisiblePropertyDrawer\Editor\ConditionallyVisiblePropertyDrawer.cs" />
      <Compile Include="Assets\YandexGame\ScriptsYG\Editor\LanguageYGEditorWindow.cs" />
-     <Compile Include="Assets\YandexGame\ScriptsYG\Editor\CreateYandexGameEditor.cs" />
      <Compile Include="Assets\YandexGame\ScriptsYG\Editor\LanguageYGEditor.cs" />
+     <Compile Include="Assets\YandexGame\ScriptsYG\Editor\FontMasseInstallEditorWindow.cs" />
+     <Compile Include="Assets\Editor\RemoveMobileSupportWarningWebBuild.cs" />
+     <Compile Include="Assets\YandexGame\ScriptsYG\Editor\CreateYandexGameEditor.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.40f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -287,6 +287,9 @@
      <Reference Include="Unity.Plastic.Newtonsoft.Json">
      <HintPath>C:\Users\gor28\DoterSimulator\Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
      </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>C:\Users\gor28\DoterSimulator\Assets\YandexGame\Addons\Auto Localization\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Plastic.Antlr3.Runtime">
      <HintPath>C:\Users\gor28\DoterSimulator\Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
      </Reference>
@@ -295,9 +298,6 @@
      </Reference>
      <Reference Include="unityplastic">
      <HintPath>C:\Users\gor28\DoterSimulator\Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
-     </Reference>
-     <Reference Include="Newtonsoft.Json">
-     <HintPath>C:\Users\gor28\DoterSimulator\Assets\YandexGame\Addons\Auto Localization\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
      <HintPath>C:\Users\gor28\DoterSimulator\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
